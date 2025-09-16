@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>비밀번호 찾기</title>
+    <link rel="stylesheet" href="/css/FindPage.css">
+</head>
+<body>
+
+<div class="find-wrapper">
+    <div class="find-header">
+            <img src="/img/Farm&FIt_Logo.png" alt="logo" class="logo-small">
+        <h2>비밀번호 찾기</h2>
+    </div>
+
+    <form class="find-form">
+        <label>아이디</label>
+        <input type="text" placeholder="아이디 입력" required>
+
+        <label>이름</label>
+        <input type="text" placeholder="이름 입력" required>
+
+        <label>휴대전화</label>
+        <div class="input-row">
+            <input type="text" placeholder="휴대전화 입력" required>
+            <button type="button" class="btn-send">본인인증</button>
+        </div>
+        <div class="verify-row">
+            <input type="text" id="verifyCode" placeholder="인증번호 입력">
+            <button type="button" id="checkCodeBtn" class="verify-btn">확인</button>
+        </div>
+    </form>
+</div>
+<script>
+    document.getElementById('checkCodeBtn').addEventListener('click', () => {
+        const code = document.getElementById('verifyCode').value.trim();
+        if (code === '') {
+            alert('인증번호를 입력하세요.');
+            return;
+        }
+
+        // 실제 검증 로직 생략 (지금은 그냥 통과시킴)
+        // 비밀번호 재설정 페이지로 이동
+        window.location.href = '/Layout/resetPw';
+    });
+</script>
+</body>
+</html>

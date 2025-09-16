@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>아이디 찾기 결과</title>
+    <link rel="stylesheet" href="/css/FindPage.css">
+</head>
+<body>
+<div class="result-wrapper">
+    <h2>아이디 찾기 결과</h2>
+    <p>당신의 아이디는 <strong th:text="${userId}">chaesu4438</strong> 입니다.</p>
+
+    <div class="result-buttons">
+        <a href="/Layout/loginPage" class="result-btn">로그인</a>
+        <a href="/Layout/findPw" class="result-btn">비밀번호 찾기</a>
+        <a href="/Layout/MainpageLayout" class="result-btn">홈으로</a>
+    </div>
+</div>
+</body>
+</html>

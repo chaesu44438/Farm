@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>로그인 | Farm&Fit</title>
+    <link rel="stylesheet" href="/css/LoginPage.css">
+</head>
+<body>
+
+<div class="login-wrapper">
+    <img class="logo" src="/img/Farm&FIt_Logo.png" alt="logo">
+
+    <form class="login-form">
+        <label>아이디</label>
+        <input type="text" placeholder="아이디를 입력하세요" required>
+
+        <label>비밀번호</label>
+        <input type="password" placeholder="비밀번호를 입력하세요" required>
+
+        <div class="login-options">
+            <label>
+                <input type="checkbox"> 로그인 상태 유지
+            </label>
+        </div>
+
+        <button type="submit" class="login-btn">로그인</button>
+
+        <!-- loginPage.html 하단 링크 -->
+        <div class="login-links">
+            <a href="/Layout/findId">아이디 찾기</a> |
+            <a href="/Layout/findPw">비밀번호 찾기</a> |
+            <a href="/Layout/register" class="register-link">회원가입</a>
+        </div>
+    </form>
+</div>
+
+</body>
+
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>비밀번호 재설정 | Farm&Fit</title>
+    <link rel="stylesheet" href="/css/FindPage.css">
+</head>
+<body>
+<div class="reset-wrapper">
+    <img src="/img/Farm&FIt_Logo.png" alt="logo" class="logo-small">
+    <h2>비밀번호 재설정</h2>
+
+    <form id="resetForm" class="reset-form">
+        <label>새 비밀번호</label>
+        <input type="password" id="newPw" placeholder="새 비밀번호 입력" required>
+
+        <label>비밀번호 확인</label>
+        <input type="password" id="checkPw" placeholder="비밀번호 다시 입력" required>
+
+        <button type="submit" class="verify-btn">변경하기</button>
+    </form>
+</div>
+
+<script>
+    document.getElementById('resetForm').addEventListener('submit', (e) => {
+        e.preventDefault();
+
+        const pw1 = document.getElementById('newPw').value.trim();
+        const pw2 = document.getElementById('checkPw').value.trim();
+
+        if (pw1 === '' || pw2 === '') {
+            alert('모든 항목을 입력해주세요.');
+            return;
+        }
+        if (pw1 !== pw2) {
+            alert('비밀번호가 일치하지 않습니다.');
+            return;
+        }
+
+        // 실제로는 서버에 비밀번호 변경 요청을 보냄 (지금은 생략)
+        alert('비밀번호가 성공적으로 변경되었습니다.');
+        window.location.href = '/Layout/loginPage';
+    });
+</script>
+</body>
+</html>

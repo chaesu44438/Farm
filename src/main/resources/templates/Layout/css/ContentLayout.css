@@ -1,0 +1,198 @@
+/*================ 공통설정 ================*/
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+ul{
+    list-style: none;
+}
+.container{
+    position: relative;
+    margin: auto;
+}
+.btn{
+    border-radius: 20%;
+}
+a{
+    text-decoration: none;
+    color: black;
+}
+.limit{
+    max-width: 1400px;
+    margin: auto;
+    height: 100%;
+}
+
+/*================= 헤더 =================*/
+
+header {
+    background-color: #edf3e7;
+}
+
+/* 검색창 */
+header .container-fluid{
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    /*background: aquamarine;*/
+    margin: auto auto;
+}
+header .container-fluid .d-flex{
+    position: relative;
+    margin: auto auto;
+    display: flex;
+    align-content: center;
+    justify-content: center;
+}
+header .container-fluid .d-flex .search{
+    padding-left: 8px;
+    height: 30px;
+    width: 480px;
+    border-radius: 10px;
+}
+header .container-fluid .d-flex .btn{
+    background: none;
+    height: 25px;
+    width: 25px;
+    border: none;
+    position: absolute;
+    right: 1%;
+    top: 3px;
+}
+header .container-fluid .d-flex .btn img{
+    margin: auto auto;
+    height: 60%;
+}
+/* 로그인 */
+header .login{
+    align-content: center;
+    position: relative;
+    right: 2%;
+}
+header .login a{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-right: 10px;
+}
+header .login a img{
+    width: 30px;
+}
+header .login a p{
+    font-size: 12px;
+}
+
+/* 메뉴 */
+header .ui-menu{
+    width: 100%;
+    height: 60px;
+    display: flex;
+    flex-direction: column;
+}
+header .ui-menu .logo{
+    width: 20%;
+    object-fit: contain;
+}
+header .ui-menu .main-menu{
+    display: flex;
+    height: 60px;
+    z-index: 1000;
+}
+header .ui-menu .main-menu-content{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+header .ui-menu .menu{
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    text-align: center;
+}
+header .menu .menu-content{
+    border-radius: 20px;
+    margin: auto;
+    align-content: center;
+    background: azure;
+    height: 50px;
+    width: 16%;
+}
+header .ui-menu .sub-menu{
+    display: none;
+    max-width: 1200px;
+    justify-content: space-around;
+    flex-direction: row;
+    text-align: center;
+    margin-top: 10px;
+    background: azure;
+}
+header .ui-menu .main-menu-content:hover .sub-menu{
+    display: flex;
+}
+header .ui-menu .sub-menu-content{
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    text-align: center;
+}
+header .ui-menu .sub-menu-content li{
+    margin: 10px;
+}
+
+
+/*================= 메인 =================*/
+main {
+    height: 600px;
+    background: #f2f4f7;
+}
+main .main-container{
+    display: flex;
+}
+/* 사이드바 */
+main .side-bar{
+    padding-top: 5px;
+    width: 25%;
+}
+main .side-bar .side-menu{
+    display: flex;
+    flex-direction: column;
+}
+main .side-bar .side-menu .side-content{
+    display: flex;
+    height: 50px;
+    width: 80%;
+    color: white;
+    background: darksalmon;
+    border-radius: 25px;
+    margin: 10px auto;
+    align-items: center;
+    justify-content: center;
+}
+main .side-bar .side-menu .side-content:first-child{
+    color: black;
+    background: white;
+    border: solid 2px darksalmon;
+}
+/* 메인페이지 */
+main .main-board{
+    position: relative;
+    height: 100%;
+    width: 100%;
+}
+main .main-board .main-content{
+    padding: 10px;
+    background: aliceblue;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+}
+main .main-board .main-content:first-child{
+    z-index: 10;
+}
+
+/*================= 푸터 =================*/
+footer {
+    background-color: darkgray;
+    height: 100px;
+}

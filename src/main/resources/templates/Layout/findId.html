@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>아이디 찾기</title>
+    <link rel="stylesheet" href="/css/FindPage.css">
+</head>
+<body>
+
+<div class="find-wrapper">
+    <div class="find-header">
+        <img src="/img/Farm&FIt_Logo.png" alt="logo" class="logo-small">
+    <h2>아이디 찾기</h2>
+    </div>
+
+    <!-- 이름 + 휴대전화 -->
+    <form class="find-form">
+        <label>이름</label>
+        <input type="text" placeholder="이름 입력" required>
+
+        <label>휴대전화</label>
+        <div class="input-row">
+            <input type="text" placeholder="휴대전화 입력" required>
+            <button type="button" class="btn-send">인증번호</button>
+        </div>
+
+        <div class="verify-box">
+            <input type="text" id="verifyCode" placeholder="인증번호 입력">
+            <button type="button" id="checkCodeBtn">확인</button>
+        </div>
+    </form>
+
+    <hr>
+
+    <!-- 이름 + 이메일 -->
+    <form class="find-form">
+        <label>이름</label>
+        <input type="text" placeholder="이름 입력" required>
+
+        <label>이메일</label>
+        <div class="input-row">
+            <input type="email" placeholder="이메일 입력" required>
+            <button type="button" class="btn-send">인증번호</button>
+        </div>
+
+        <!-- 이메일 인증번호 입력 -->
+        <div class="verify-box">
+            <input type="text" id="verifyEmailCode" placeholder="인증번호 입력">
+            <button type="button" id="checkEmailBtn" class="btn-confirm">확인</button>
+        </div>
+    </form>
+</div>
+
+
+
+</body>
+<script>
+    document.getElementById('checkCodeBtn').addEventListener('click', () => {
+        const code = document.getElementById('verifyCode').value.trim();
+
+        if (code === '') {
+            alert('인증번호를 입력하세요.');
+            return;
+        }
+
+        const userId = 'chaesu4438'; // 실제로는 서버에서 조회
+
+        // 새 페이지로 이동하며 userId 파라미터 전달
+        window.location.href = `/Layout/findIdResult?userId=${userId}`;
+    });
+
+    // 이메일 인증 확인 버튼
+    document.getElementById('checkEmailBtn').addEventListener('click', () => {
+        const emailCode = document.getElementById('verifyEmailCode').value.trim();
+        if (emailCode === '') {
+            alert('인증번호를 입력하세요.');
+            return;
+        }
+        const userId = 'chaesu4438'; // 실제로는 서버에서 조회
+        window.location.href = `/Layout/findIdResult?userId=${userId}`;
+    });
+</script>
+
+</html>

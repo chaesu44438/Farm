@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>회원가입 | Farm&Fit</title>
+    <link rel="stylesheet" href="/css/register.css">
+</head>
+<body>
+
+<div class="register-wrapper">
+
+    <!-- 진행바 -->
+    <div class="step-indicator">
+        <div class="step active">1 본인인증</div>
+        <div class="step">2 정보입력</div>
+        <div class="step">3 완료</div>
+    </div>
+
+    <!-- 1단계: 본인인증 -->
+    <div class="step-content" id="step1">
+        <h2>본인인증</h2>
+        <label>이름</label>
+        <input type="text" id="certName" placeholder="이름 입력">
+
+        <label>휴대전화</label>
+        <input type="text" id="certPhone" placeholder="휴대전화 입력">
+        <button type="button" id="sendCode">인증번호 발송</button>
+
+        <input type="text" id="verifyCode" placeholder="인증번호 입력">
+        <button type="button" id="checkCode">확인</button>
+    </div>
+
+    <!-- 2단계: 회원정보입력 -->
+    <div class="step-content hidden" id="step2">
+        <h2>회원정보 입력</h2>
+        <div class="signup-form">
+            <input type="text" placeholder="아이디 입력">
+            <input type="password" placeholder="비밀번호 입력">
+            <input type="password" placeholder="비밀번호 확인">
+            <input type="email" placeholder="이메일 입력">
+            <input type="text" placeholder="주소 입력">
+        </div>
+    </div>
+
+    <!-- 3단계: 가입완료 -->
+    <div class="step-content hidden" id="step3">
+        <h2>회원가입이 완료되었습니다 🎉</h2>
+        <button onclick="location.href='/Layout/loginPage'">로그인하러 가기</button>
+        <button onclick="location.href='/Layout/mainpageLayout'">홈으로</button>
+    </div>
+
+    <!-- 다음 단계 버튼 -->
+    <div class="step-buttons">
+        <button id="nextBtn">다음 단계</button>
+    </div>
+</div>
+
+<script>
+    const steps = document.querySelectorAll('.step');
+    const contents = document.querySelectorAll('.step-content');
+    const nextBtn = document.getElementById('nextBtn');
+    let current = 0;
+
+    nextBtn.addEventListener('click', () => {
+        if (current < 2) {
+            contents[current].classList.add('hidden');
+            steps[current].classList.remove('active');
+            current++;
+            contents[current].classList.remove('hidden');
+            steps[current].classList.add('active');
+
+            if (current === 2) nextBtn.style.display = 'none';
+        }
+    });
+</script>
+
+</body>
+</html>

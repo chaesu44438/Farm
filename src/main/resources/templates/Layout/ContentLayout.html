@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Farm&Fit</title>
+  <link rel="stylesheet" th:href="@{/css/ContentLayout.css}" />
+</head>
+
+<body>
+<div class="container">
+  <header>
+    <div class="container-fluid limit">
+      <img class="logo" src="/img/Farm&FIt_Logo.png" alt="logo">
+      <form class="d-flex" role="search">
+        <input class="form-control search" type="search" placeholder="Search" aria-label="Search"/>
+        <button class="btn btn-search" type="button"><img src="/img/search.png"></button>
+      </form>
+      <form class="login">
+        <a href="#">
+          <img src="/img/login.png">
+          <p>로그인</p>
+        </a>
+      </form>
+    </div>
+    <div class="ui-menu limit">
+      <div class="main-menu">
+        <div class="main-menu-content">
+          <ul class="menu">
+            <li class="menu-content">메뉴1</li>
+            <li class="menu-content">메뉴2</li>
+            <li class="menu-content">메뉴3</li>
+            <li class="menu-content">메뉴4</li>
+            <li class="menu-content">메뉴5</li>
+          </ul>
+          <div class="sub-content">
+            <ul class="sub-menu">
+              <ul class="sub-menu-content">
+                <li class="sub-content">
+                  <a href="#">서브메뉴1</a>
+                </li>
+                <li class="sub-content">
+                  <a href="#">서브메뉴2</a>
+                </li>
+                <li class="sub-content">
+                  <a href="#">서브메뉴3</a>
+                </li>
+              </ul>
+              <ul class="sub-menu-content">
+                <li class="sub-content">
+                  <a href="#">서브메뉴1</a>
+                </li>
+                <li class="sub-content">
+                  <a href="#">서브메뉴2</a>
+                </li>
+                <li class="sub-content">
+                  <a href="#">서브메뉴3</a>
+                </li>
+              </ul>
+              <ul class="sub-menu-content">
+                <li class="sub-content">
+                  <a href="#">서브메뉴1</a>
+                </li>
+                <li class="sub-content">
+                  <a href="#">서브메뉴2</a>
+                </li>
+                <li class="sub-content">
+                  <a href="#">서브메뉴3</a>
+                </li>
+              </ul>
+              <ul class="sub-menu-content">
+                <li class="sub-content">
+                  <a href="#">서브메뉴1</a>
+                </li>
+                <li class="sub-content">
+                  <a href="#">서브메뉴2</a>
+                </li>
+                <li class="sub-content">
+                  <a href="#">서브메뉴3</a>
+                </li>
+              </ul>
+              <ul class="sub-menu-content">
+                <li class="sub-content">
+                  <a href="#">서브메뉴1</a>
+                </li>
+                <li class="sub-content">
+                  <a href="#">서브메뉴2</a>
+                </li>
+                <li class="sub-content">
+                  <a href="#">서브메뉴3</a>
+                </li>
+              </ul>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+  <main>
+    <div class="main-container limit">
+      <div class="side-bar">
+        <ul class="side-menu">
+          <li class="side-title">
+            <p>선택한 메뉴</p>
+          </li>
+          <li onclick="ClickChange(0)" class="side-content">
+            <p>사이드 메뉴1</p>
+          </li>
+          <li onclick="ClickChange(1)" class="side-content">
+            <p>사이드 메뉴2</p>
+          </li>
+          <li onclick="ClickChange(2)" class="side-content">
+            <p>사이드 메뉴3</p>
+          </li>
+        </ul>
+      </div>
+      <div class="main-board">
+        <div class="main-content">test 1</div>
+        <div class="main-content">test 2</div>
+        <div class="main-content">test 3</div>
+      </div>
+    </div>
+  </main>
+  <footer>
+
+  </footer>
+</div>
+<script>
+  let select_menu = document.getElementsByClassName("side-content");
+  let select_content = document.getElementsByClassName("main-content");
+  pageNum = 1
+  PageChange(pageNum);
+
+  function PageChange(pageNum) {
+    select_content[pageNum].style.zIndex = 100;
+    select_menu[pageNum].style.backgroundColor = "#fff";
+    select_menu[pageNum].style.color = "#000";
+    select_menu[pageNum].style.border = "solid 2px darksalmon";
+  }
+  function ClickChange(selectTag){
+    for(i=0; i<select_menu.length; i++){
+      select_content[i].style.zIndex = i;
+      select_menu[i].style.backgroundColor = "darksalmon";
+      select_menu[i].style.color = "#fff";
+      select_menu[i].style.border = "none";
+    }
+    select_content[selectTag].style.zIndex = 100;
+    select_menu[selectTag].style.backgroundColor = "#fff";
+    select_menu[selectTag].style.color = "#000";
+    select_menu[selectTag].style.border = "solid 2px darksalmon";
+  }
+</script>
+</body>
+</html>
