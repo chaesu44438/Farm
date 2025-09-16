@@ -43,4 +43,6 @@ public class LoginController {
     public String mainpageLayout() {
         return "Layout/MainpageLayout"; // 파일명과 대소문자 정확히 맞추기
     }
+
+
 }
